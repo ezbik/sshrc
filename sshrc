@@ -16,7 +16,8 @@ function sshrc() {
                 if [ ! -e ~/.hushlogin ]; then
                     if [ -e /etc/motd ]; then cat /etc/motd; fi
                     #if [ -e /etc/update-motd.d ]; then run-parts /etc/update-motd.d/ 2>/dev/null; fi
-                    last -F \$USER 2>/dev/null | grep -v 'still logged in' | head -n1 | awk '{print \"Last login:\",\$4,\$5,\$6,\$7,\$8,\"from\",\$3;}'
+                    #last -F \$USER 2>/dev/null | grep -v 'still logged in' 2>/dev/null | head -n1  | awk '{print \"Last login:\",\$4,\$5,\$6,\$7,\$8,\"from\",\$3;}'
+                    #test -x /etc/update-motd.d/00-header && /etc/update-motd.d/00-header
                 fi
                 "
         else
